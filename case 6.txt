@@ -1,0 +1,21 @@
+                case 6:
+                    System.out.print("Set budget limit: ");
+                    double limit = sc.nextDouble();
+                    manager.setBudget(limit);
+                    break;
+
+                case 7:
+                    manager.checkBudget();
+                    break;
+
+                case 8:
+                    manager.saveToFile();
+                    System.out.println("Data saved. Exiting...");
+                    return;
+
+                default:
+                    System.out.println("Invalid choice!");
+            }
+        }
+    }
+}

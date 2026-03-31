@@ -1,0 +1,21 @@
+// LOAD FROM FILE
+    public void loadFromFile() {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("expenses.txt"));
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                expenses.add(new Expense(
+                        Double.parseDouble(data[0]),
+                        data[1],
+                        data[2],
+                        data[3]
+                ));
+            }
+            br.close();
+        } catch (Exception e) {
+            System.out.println("No previous data found.");
+        }
+    }
+}
